@@ -30,7 +30,6 @@ const FullArticle = () => {
           <p>{article.topic}</p>
           <img src={article.article_img_url} />
           <p>{article.votes}</p>
-
           <p>{article.created_at}</p>
         </>
       ) : (

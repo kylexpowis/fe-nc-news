@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
+import { getAllArticles } from "../api";
 import ArticlesCard from "./ArticlesCard";
+
+
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://nc-backend-ecsl.onrender.com/api/articles")
-      .then((res) => res.json())
-      .then((data) => {
-        setArticles(data.articles);
+    getAllArticles()
+    .then((articles) => {
+        setArticles(articles);
         setIsLoading(false);
       })
       .catch((error) => {
