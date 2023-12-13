@@ -2,10 +2,15 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import CommentForm from "./CommentForm";
+import CommentsList from "./CommentsList";
 
 const FullArticle = () => {
   const [article, setArticle] = useState(null);
   const { article_id } = useParams();
+
+
+
   useEffect(() => {
     const queryString = `https://nc-backend-ecsl.onrender.com/api/articles/${article_id}`;
     axios
@@ -31,6 +36,8 @@ const FullArticle = () => {
           <img src={article.article_img_url} />
           <p>{article.votes}</p>
           <p>{article.created_at}</p>
+          <CommentForm article_id={article_id} />
+          <CommentsList article_id={article_id} />
         </>
       ) : (
         <p>Loading...</p>
