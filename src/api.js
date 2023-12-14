@@ -9,13 +9,3 @@ export const getAllArticles = () => {
       })
 }
 
-// export const getArticleById = (article_id) => {
-//   return axios
-//       .get(`https://nc-backend-ecsl.onrender.com/api/articles/${article_id}`)
-//       .then((response) => {
-//           return response.data
-//       })
-//       .catch((error) => {
-//           console.error("Error fetching article:", error)
-//       });
-// };

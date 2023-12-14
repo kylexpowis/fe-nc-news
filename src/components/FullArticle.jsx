@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import CommentForm from "./CommentForm";
+import CommentsList from "./CommentsList";
 
 const FullArticle = () => {
   const [article, setArticle] = useState(null);
@@ -66,6 +68,8 @@ const FullArticle = () => {
           <button onClick={handleDownvote}>Downvote</button>
           </p>
           <p>{article.created_at}</p>
+          <CommentForm article_id={article_id} />
+          <CommentsList article_id={article_id} />
         </>
       ) : (
         <p>Loading...</p>
