@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { getArticleById, upvoteArticle, downvoteArticle } from "../api";
+import { getArticleById, upvoteArticle, downvoteArticle, postComment } from "../api";
 import CommentForm from "./CommentForm";
 import CommentsList from "./CommentsList";
 
@@ -80,7 +80,6 @@ const FullArticle = () => {
             </button>
           </p>
           <p>{article.created_at}</p>
-          <CommentForm article_id={article_id} />
           <CommentsList article_id={article_id} />
         </>
       ) : (

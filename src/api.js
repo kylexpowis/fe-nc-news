@@ -26,7 +26,7 @@ export const upvoteArticle = (article_id) => {
     })
     .catch((error) => {
       console.error("Error upvoting", error);
-      throw new Error("Faile to upvote");
+      throw new Error("Failed to upvote");
     });
 };
 
@@ -38,5 +38,22 @@ export const downvoteArticle = (article_id) => {
     .catch((error) => {
       console.error("Error downvoting", error);
       throw new Error("Failed to downvote");
+    });
+};
+
+export const postComment = (article_id, author, body) => {
+  return axios
+    .post(
+      `https://nc-backend-ecsl.onrender.com/api/articles/${article_id}/comments`,
+      {
+        username: author,
+        body: body,
+      }
+    )
+    .then((response) => response.data.postedComment)
+    .catch((error) => {
+      console.log(error)
+      console.error("Error posting comment", error);
+      throw new Error("Failed to post comment");
     });
 };
