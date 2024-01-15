@@ -1,11 +1,14 @@
 .header {
-  color: white
+  color: white;
+  text-align: center;
+  background-color: #1a1a1a;
+  padding: 10px 0;
 }
 
 .ArticlesCard {
-  border-style: solid;
-  border: 10px;
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
   max-height: 300px;
   overflow-y: auto;
-  
 }
